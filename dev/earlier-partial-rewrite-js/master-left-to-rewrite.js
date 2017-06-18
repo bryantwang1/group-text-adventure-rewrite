@@ -1,58 +1,6 @@
 var placedMonsterCombat = false;
 var playerStart = true;
 
-// function similar to surroundingChecker, to run when user inputs a use command
-function objectUser(player) {
-  var y = player.y - 1;
-  var x = player.x - 1;
-  var whichTorch = player.torchChecker();
-
-  objectLoopBreaker: {
-    for(var idx = y; idx < y+3; idx++) {
-      for(var idx2 = x; idx2 < x+3; idx2++) {
-        if(idx === player.y && idx2 === player.x) {
-        } else {
-          var area = mapArrays[idx][idx2];
-          if(area.terrainType === "firepit") {
-            if(whichTorch === "none") {
-              $("#combat-display").text("You reach a hand toward the center of the firepit... Ouch! The faint embers were hotter than they looked. You pull your hand back toward your chest quickly.");
-            } else if(whichTorch === "unlit") {
-              for(var torchIdx = 0; torchIdx < player.items.length; torchIdx++) {
-                if(player.items[torchIdx].name === "unlitTorch") {
-                  player.items[torchIdx] = torch;
-                  $("#which-torch").text("Lit Torch");
-                }
-              }
-              $("#combat-display").text("You touch your unlit torch to the embers...your previously unlit torch springs to life with a whoosh.");
-            } else if(whichTorch === "lit") {
-              $("#combat-display").text("You thrust your lit torch at the firepit, but nothing happens.");
-            } else {
-              $("#combat-display").text("You shouldn't be seeing this message.");
-            }
-          } else if(area.terrainType === "objectSwitch") {
-            if(whichTorch === "none") {
-              $("#combat-display").text("You nudge the stone pillar, climb into the bowl on top, push it with all your might. Nothing happens. You sigh and brush the ashes off your clothing.");
-            } else if(whichTorch === "unlit") {
-              $("#combat-display").text("You prod the stone pillar with your unlit torch, nothing happens. It feels like you're onto something, though.");
-            } else if(whichTorch === "lit") {
-              $("#combat-display").text("You touch your torch's flame to the stone bowl atop the pillar. A groaning sound echoes through the room as somewhere some hidden mechanism activates.");
-              var switchRoom = "";
-              if(area.inside === "room3") {
-                switchRoom = "room3";
-              } else if(area.inside === "room4") {
-                switchRoom = "room4";
-              }
-              console.log("about to run room manipulator: " + switchRoom);
-              roomManipulator(player, switchRoom);
-            } else {
-              $("#combat-display").text("You shouldn't be seeing this message, bro.");
-            }
-          }
-        }
-      }
-    }
-  }
-}
 // Function similar to surroundingChecker, to run when user inputs an open door command
 function doorOpener(player) {
   $("#combat-display").empty();
