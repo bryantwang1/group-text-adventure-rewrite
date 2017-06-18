@@ -1,0 +1,50 @@
+body {
+  background-color: black;
+}
+
+#map p {
+  letter-spacing: 2em;
+}
+
+#map {
+  text-align: center;
+}
+
+.green {
+  color: green;
+}
+
+.white {
+  color: gray;
+}
+
+.gold {
+  color: gold;
+}
+
+.purple {
+  color: purple;
+}
+
+ /*Remember to move health-bar styling to styles.css*/
+#player-health-bar-outer {
+  background-color: white;
+  width: 200px;
+  height: 30px;
+}
+
+#player-health-bar-inner {
+  background-color: red;
+  height: 30px;
+}
+
+#monster-health-bar-outer {
+  background-color: white;
+  width: 200px;
+  height: 30px;
+}
+
+#monster-health-bar-inner {
+  background-color: red;
+  height: 30px;
+}

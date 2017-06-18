@@ -1,0 +1,19 @@
+{
+  "name": "bw-text-adventure",
+  "productName": "BW Text Adventure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "watchify dev/main.js -t babelify -o public/js/game.js --debug --verbose"
+  },
+  "author": "Bryant Wang",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.5.2",
+    "babelify": "^7.3.0"
+  }
+}

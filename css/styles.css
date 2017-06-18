@@ -1,0 +1,459 @@
+* {
+  font-family: 'Eczar', serif;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  background-color: #222;
+  height: 1180px;
+}
+audio {
+  display: none;
+}
+h4 {
+  color: #fff;
+  font-size: 1.6em;
+}
+h3 {
+  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: 1px;
+}
+p{
+  color: #fff;
+}
+
+/* ----   Monster plus a few other images   ----*/
+#monster {
+  width: 275px;
+  height: 600px;
+  border: solid 4px #777;
+  padding: 10px 10px 10px 12px;
+  margin: 20px 5px;
+  background-color: #888;
+  border: solid 4px #0f345a;
+}
+#room-description{
+  margin-top: -10px;
+  display: none;
+}
+#room-description p {
+  font-size: .9em;
+  width: 240px;
+  height: 150px;
+  margin: 0px 0px 5px 0px;
+  padding: 3px;
+  color: #333;
+  letter-spacing: 1px;
+}
+#goblin-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/goblin.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#wizard-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/wizard.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#golem-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/golem.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#mega-golem-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/super-golem.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#dragon-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/dragon.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#spider-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/spider.jpg");
+  border-radius: 15px;
+  display: none;
+
+}
+#skeleton-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/skeleton.jpg");
+  border-radius: 15px;
+  display: none;
+
+}
+#chest-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/chest.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#search-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/chest-open.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#door-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: -10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/door.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#monster-health-number {
+  text-align: center;
+}
+#monster-name {
+  font-size: 1.6em;
+  text-align: center;
+  margin: 15px 10px 0px 10px;
+}
+#monster-description {
+  width: 240px;
+  height: 150px;
+  margin: 0px 0px 0px 0px;
+  padding: 10px;
+  color: #333;
+  letter-spacing: 1px;
+}
+#monster-health-bar-inner, #player-health-bar-inner {
+  height: 16px;
+  background-color: #6dc20f;
+  border-radius: 5px;
+  background: linear-gradient(#D9FEB1 10%, white 10%, #5BC656 50%);
+}
+/*Works on both monster and hero*/
+#monster-health-bar-outer, #player-health-bar-outer {
+  width: 240px;
+  height: 20px;
+  background-color: #000;
+  border: solid 2px #333;
+  box-shadow: 5px 5px 15px #222;
+  border-radius: 5px;
+}
+
+/* ----   Hero   ----*/
+#character {
+width: 270px;
+height: 1150px;
+background-color: #888;
+border: solid 4px #0f345a;
+padding: 10px;
+margin: 20px 0px -20px -10px;
+}
+#hero-dead {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/hero-dead.jpg");
+  border-radius: 15px;
+  display: none;
+
+}
+#hero-image {
+  width: 240px;
+  height: 360px;
+  background-color: #555;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 15px #222;
+  background-image: url("../img/hero-image.jpg");
+  border-radius: 15px;
+  display: none;
+}
+#hero-health {
+  display: none;
+}
+#hero-health-number {
+  text-align: center;
+  display: none;
+}
+
+/* ----   Weapons   ----*/
+#weapons-label {
+  display: none;
+}
+#weapons {
+width: 240px;
+height:250px;
+background-color: #111;
+border-radius: 15px;
+box-shadow: 5px 5px 15px #222;
+padding: 10px 8px 6px 8px ;
+display: none;
+}
+#weapons p {
+  font-size: 1em;
+  font-style: normal;
+  color: #888;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-left: 12px;
+}
+#weapons img {
+  margin: -2px 2px 2px 2px;
+  margin-left: 12px;
+}
+
+#weapons .equipped p {
+  font-size: 1em;
+  font-style: normal;
+  color: gold;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-left: 12px;
+}
+
+#woodSword, #metalSword, #bow, #warHammer {
+  display:none;
+}
+/* ----   Items   ----*/
+#items-label {
+  display: none;
+}
+#items {
+  width: 240px;
+  height: 375px;
+  background-color: #111;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px #222;
+  padding: 10px 8px 6px 8px ;
+  display: none;
+}
+#items p {
+  font-size: 1em;
+  font-style: normal;
+  color: #888;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-left: 12px;
+}
+#items img {
+  margin: -2px 2px 2px 2px;
+  margin-left: 12px;
+}
+#torch, #puzzle-item1, #puzzle-item2 {
+  display: none;
+}
+/* ----   player User Input   ----*/
+#middle {
+width: 870px;
+height:120px;
+margin-top: -510px;
+}
+#command-label {
+color: #D2D2D2;
+text-align: left;
+margin-bottom: 10p
+}
+#user-input-display {
+width: 300px;
+height:100px;
+margin-left: 320px;
+}
+#user-input {
+  width: 225px;
+}
+
+#available-options {
+width: 275px;
+height:150px;
+background-color: #111;
+margin-left: 73px;
+padding: 10px 10px 10px 10px;
+}
+#available-options li {
+  list-style: none;
+  font-size: 1em;
+  font-style: normal;
+  color: #888;
+  letter-spacing: 1px;
+}
+
+/* ----   Environment/Bottom   ----*/
+#player-options {
+width: 870px;
+height:290px;
+/*background-color: red;*/
+margin-top: -255px;
+}
+#environment  {
+width: 560px;
+height:365px;
+background-color: #ddd;
+margin-left: 5px;
+margin-top: -90px;
+color: #333;
+padding: 20px;
+font-size: 1.2em;
+border: solid 4px #0f345a;
+}
+#environment p {
+  color: #333;
+}
+
+/* ----   Help   ----*/
+#help  {
+width: 275px;
+height: 495px;
+background-color: #444;
+margin-top: -220px;
+margin-left: 5px;
+color: #C2C2C2;
+padding: 20px;
+font-size: 1.2em;
+border: solid 4px #0f345a;
+display: none;
+}
+ #help p {
+   color: #C2C2C2;
+ }
+ul {
+  list-style: none;
+}
+#help li {
+  font-size: 0.8em;
+  font-style: italic;
+}
+h5 {
+  font-size: 1.2em;
+  color: #D2D2D2;
+    margin-bottom: 0px;
+}
+
+/* ----   Map   ----*/
+#map {
+width: 565px;
+height:560px;
+background-color: #111;
+padding: 20px;
+margin: 20px 0px 0px 0px;
+border-radius: 15px;
+padding: 40px 20px;
+padding-left: 50px;
+display: none;
+}
+#map p {
+  letter-spacing: 40px;
+  line-height: 2.8em;
+}
+#map-placement {
+  margin-top: 50px;
+
+}
+#map-label h4 {
+  color: #D2D2D2;
+  margin: 20px 10px -10px 10px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+#death-message {
+  text-align: center;
+  margin-top: 200px;
+  color: darkred;
+  display: none;
+}
+#victory-image {
+  text-align: center;
+  margin-top: 200px;
+  display:  none;
+}
+#starting-image {
+  text-align: center;
+  margin-top: 200px;
+}
+#dragon-onMap-image img {
+  width: 500px;
+  height: auto;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+/*walls icon*/
+.wall {
+  color: #4777A9;
+}
+/*tiles icon*/
+.tiles {
+  color: #6A6A6A;
+}
+/*character icon*/
+.character {
+  color: #5BC656;
+  font-size: .9em;
+
+}
+/*chests and doors*/
+.purple {
+  color: #D07E0E;
+}
+/*water*/
+.blue {
+  color: blue;
+}
+/*lava*/
+.bright-red {
+  color: #ff3300;
+}
+/*placed monsters*/
+.yellow {
+  color: #ffff33;
+}
+/*spikes icon*/
+.spikes {
+  color: #8e7978;
+}
+/*firepit*/
+.red {
+  color: red;
+}

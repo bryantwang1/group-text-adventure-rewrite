@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/map.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Eczar" rel="stylesheet">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/master.js"></script>
+    <title>Text Adventure</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="audio">
+      </div>
+      <div class="row">
+
+<!--              MONSTER          -->
+        <div class="col-md-3">
+          <div id="monster">
+            <div id="room-hider">
+              <div id="room-description"><h3><span id="room-name"></span></h3><p><span id="room-info"></span></p>
+              </div><!-- monster end -->
+            </div>
+            <div id="goblin-image">
+            </div><!-- he end -->
+            <div id="wizard-image">
+            </div><!-- he end -->
+            <div id="golem-image">
+            </div><!-- he end -->
+            <div id="mega-golem-image">
+            </div><!-- he end -->
+            <div id="dragon-image">
+            </div><!-- he end -->
+            <div id="spider-image">
+            </div><!-- he end -->
+            <div id="skeleton-image">
+            </div><!-- he end -->
+            <div id="searcher-images">
+              <div id="chest-image">
+              </div><!-- he end -->
+              <div id="search-image">
+              </div>
+              <div id="door-image">
+              </div>
+            </div>
+            <div id="monster-health-number"><span id="monster-health-display"></span>
+            </div><!-- health-number end -->
+            <div id="health-bar">
+              <div id="monster-health">
+              </div><!-- monster end -->
+            </div><!-- health end -->
+            <div id="monster-name">
+            </div>
+            <div id="monster-description">
+            </div>
+          </div><!-- monster end -->
+        </div><!-- col1 end -->
+
+<!--              MAP          -->
+        <div class="col-md-6">
+          <div id="map-label">
+            <h4>Dungeon Map</h4>
+          </div>
+          <div id="map">
+            <div id="dragon-onMap-image">
+              <img src="img/dragon-onMap.jpg">
+            </div>
+          </div><!-- map end -->
+          <div id="death-message">
+            <img src="img/game-over-clear.png">
+            <h1>(Unless you have revives left)<h1>
+          </div>
+          <div id="victory-image">
+            <img src="img/victory-clear.png">
+          </div>
+          <div id="starting-image">
+            <img src="img/logo-clear.png">
+          </div>
+        </div><!-- col2 end -->
+
+<!--              HERO          -->
+        <div class="col-md-3">
+          <div id="character">
+            <div id="hero-dead">
+            </div><!-- image end -->
+            <div id="hero-image">
+            </div><!-- image end -->
+            <div id="hero-health-number"><span id="hero-health-display"></span>
+            </div><!-- health-number end -->
+            <div id="health-bar">
+            <div id="hero-health">
+            </div><!-- health end -->
+          </div><!-- health end -->
+
+<!--              INVENTORY          -->
+
+          <h3 id="weapons-label"> Weapons</h3>
+          <div id="weapons">
+            <div id="woodSword" class="pull-left">
+              <img src="img/woodSword.png"><br>
+              <p>Wood Sword</p>
+            </div><!-- wood end -->
+            <div id="metalSword">
+              <img src="img/metalSword.png"><br>
+              <p>Metal Sword</p>
+            </div><!-- metal end -->
+            <div id="bow" class="pull-left">
+              <img src="img/bow.png"><br>
+              <p>Mystic Bow</p>
+            </div><!-- bow end -->
+            <div id="warHammer" class="pull-left">
+              <img src="img/warHammer.png"><br>
+              <p>War Hammer</p>
+            </div><!-- hammer end -->
+          </div><!-- weapons end -->
+
+          <h3 id="items-label"> Items</h3>
+            <div id="items">
+              <div id="potion" class="pull-left">
+                <img src="img/potionHealth.png"><br><p>Potion x <span id="player-potions"></span></p>
+              </div><!-- potion end -->
+              <div id="revive" class="pull-left">
+                <img src="img/revive.png"><br><p>Revive x <span id="player-revives"></span></p>
+              </div><!-- potion end -->
+              <div id="key" class="pull-left">
+                <img src="img/key.png"><br><p>Key x <span id="player-keys"></span></p>
+              </div><!-- potion end -->
+              <div id="torch" class="pull-left">
+                <img src="img/torch.png"><br><p><span id="which-torch"></span></p>
+              </div><!-- potion end -->
+              <div id="puzzle-item1" class="pull-left">
+                <img src="img/potionHealth.png"><br><p>puzzle item<span></span></p>
+              </div><!-- potion end -->
+              <div id="puzzle-item2" class="pull-left">
+                <img src="img/potionHealth.png"><br><p>puzzle item<span></span></p>
+              </div><!-- potion end -->
+            </div><!-- item end -->
+          </div><!-- Character end -->
+        </div><!-- col3 end -->
+      </div><!-- row1 end -->
+
+<!--              Input          -->
+
+      <div class="row">
+        <div id="middle">
+          <div class="col-md-7">
+            <div id="user-input-display">
+              <form id="input-form">
+                <div class="form-group">
+                  <h3 id="command-label">Command:</h3>
+                  <input id="user-input" class="form-control" type="text" placeholder="Enter a command." autocomplete="off">
+                </div><!-- form group end -->
+              </form>
+            </div><!-- user input display end -->
+          </div> <!--col end-->
+
+<!--              Available Options          -->
+          <div class="col-md-5">
+            <div id="available-options">
+              <li>Open Door - open</li>
+            </div><!-- help end -->
+          </div> <!--col end-->
+        </div><!-- middle end -->
+      </div> <!--row end-->
+
+<!--              Help           -->
+      <div class="row">
+        <div id="player-options">
+          <div class="col-md-4">
+        <div id="help">
+          <h4>Help Commands</h4>
+          <ul>
+            <h5>Movement</h5>
+            <li>Arrow keys for movement, locked during combat and, of course, death.</li>
+            <h5>Items</h5>
+            <li><strong>Equip:</strong> after you type equip and hit enter, you will only be able to type a weapon name, nothing else will work.</li>
+            <li><strong>Search:</strong> searches containers around you and puts the items in your inventory.</li>
+            <li><strong>Use:</strong> a command for certain environmental objects.</li>
+            <h5><strong>Combat</h5>
+            <li><strong>Attack:</strong> attempt to hit the monster.</li>
+            <li><strong>Flee:</strong> attempt to run away from the monster.</li>
+          </ul>
+        </div><!-- help end -->
+        </div> <!--col end-->
+
+<!--              Environment           -->
+        <div class="col-md-5">
+          <div id="environment"><p></p>
+            <div id="atmospheric-display">
+            </div>
+            <div id="monster-sounds">
+            </div>
+            <div id="combat-display">
+            </div>
+            <div id="weapon-descriptions">
+            </div>
+          </div><!-- envir end -->
+        </div> <!--col end-->
+      </div><!-- player option end -->
+    </div> <!--row end-->
+
+    </div><!-- Con end -->
+  </body>
+</html>
