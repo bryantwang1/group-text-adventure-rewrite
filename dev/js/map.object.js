@@ -1,5 +1,3 @@
-import Tile from './tile.object';
-
 // Map object, former room object refactored into map object
 class Map {
 
