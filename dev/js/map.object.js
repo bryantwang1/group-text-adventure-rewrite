@@ -72,7 +72,7 @@ class Map {
     }
   }
 
-  // callback function for wall creating methods
+  // function for wall creating methods
   createWall(wallThis) {
     wallThis.canMove = false;
     wallThis.description = "A wall";
@@ -108,6 +108,131 @@ class Map {
   makeAWall(yLocation, xLocation) {
     var toWall = this.mapArrays[yLocation][xLocation];
     this.createWall(toWall);
+  }
+
+  // Tile creation functions for room objects
+  createChest(amount, room) {
+    for(var idx = 0; idx < amount; idx++) {
+      var chest = new Tile(-1, -1);
+      chest.canMove = false;
+      chest.description = "An old wooden chest";
+      chest.terrainType = "chest";
+      chest.symbol = "∃";
+      chest.color = "purple";
+      chest.searchable = true;
+      chest.drops = [];
+
+      room.chests.push(chest);
+    }
+  }
+
+  createDoor(amount, room) {
+    for(var idx = 0; idx < amount; idx++) {
+      var door = new Tile(-1, -1);
+      door.canMove = false;
+      door.description = "A sturdy door of oak planks with iron strips tying it together";
+      door.terrainType = "door";
+      door.symbol = "∏";
+      door.color = "purple";
+      door.locked = false;
+      door.leadsTo = "";
+      door.firstTime = false;
+      door.fromWhere = "";
+
+      room.doors.push(door);
+    }
+  }
+
+  createWater(amount, room) {
+    for(var idx = 0; idx < amount; idx++) {
+      var water = new Tile(-1, -1);
+      water.canMove = true;
+      water.description = "Murky water. You can't tell how deep it is.";
+      water.terrainType = "water";
+      water.symbol = "w";
+      water.color = "blue";
+
+      room.waters.push(water);
+    }
+  }
+
+  createLava(amount, room) {
+    for(var idx = 0; idx < amount; idx++) {
+      var lava = new Tile(-1, -1);
+      lava.canMove = true;
+      lava.description = "Fiery hot lava";
+      lava.terrainType = "lava";
+      lava.symbol = "w";
+      lava.color = "bright-red";
+
+      room.lavas.push(lava);
+    }
+  }
+
+  createSpike(amount, room) {
+    for(var idx = 0; idx < amount; idx++) {
+      var spike = new Tile(-1, -1);
+      spike.canMove = true;
+      spike.description = "Several sharp points stick up from the ground";
+      spike.terrainType = "spike";
+      spike.symbol = "#";
+      spike.color = "spikes";
+
+      room.spikes.push(spike);
+    }
+  }
+
+  createFirepit(amount, room) {
+    for(var idx = 0; idx < amount; idx++) {
+      var firepit = new Tile(-1, -1);
+      firepit.canMove = false;
+      firepit.description = "A shallow depression in the ground, filled with ashes. A few embers still glow brightly in the center.";
+      firepit.terrainType = "firepit";
+      firepit.symbol = "¥";
+      firepit.color = "red";
+
+      room.firepits.push(firepit);
+    }
+  }
+
+  createObjectSwitch(amount, room) {
+    for(var idx = 0; idx < amount; idx++) {
+      var objectSwitch = new Tile(-1, -1);
+      objectSwitch.canMove = false;
+      objectSwitch.description = "A stone pillar about chest-high, topped with a stone bowl that shows signs of intense heat";
+      objectSwitch.terrainType = "objectSwitch";
+      objectSwitch.symbol = "/";
+      objectSwitch.color = "red";
+      objectSwitch.inside = "";
+
+      room.switches.push(objectSwitch);
+    }
+  }
+
+  createPlacedMonster(type, room) {
+    var monster = new Tile(-1, -1);
+    monster.canMove = false;
+    monster.terrainType = "monster";
+    monster.searchable = false;
+    monster.color = "yellow";
+    monster.monsterType = "";
+
+    if(type === "golem") {
+      monster.description = "A golem, much larger than any you've previously seen.";
+      monster.symbol = "Ώ";
+      monster.monsterType = "super golem";
+    } else if(type === "dragon") {
+      monster.description = "A massive scaled creature slumbers here. Its wings flap a little everytime it takes a breath. The air around the beast shimmers like the air around an intense fire."
+      monster.symbol = "♠";
+      monster.monsterType = "dragon";
+    } else if(type === "random") {
+      var randomMonster = getMonster();
+      monster.description = "A monster of indeterminate type.";
+      monster.monsterType = "random";
+      monster.symbol = "!";
+    }
+
+    room.monsters.push(monster);
   }
 
 }
